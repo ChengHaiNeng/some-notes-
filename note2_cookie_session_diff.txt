@@ -1,0 +1,31 @@
+# session和cookie的区别
+cookie:
+1. 首先，我们假设当前域名下还是没有 cookie 的
+2. 接下来，浏览器发送了一个请求给服务器（这个请求是还没带上 cookie 的）
+3. 服务器设置 cookie 并发送给浏览器（当然也可以不设置）
+4. 浏览器将 cookie 保存下来
+5. 接下来，以后的每一次请求，都会带上这些 cookie，发送给服务器
+如果不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，只要关闭浏览器窗口，cookie就消失了。
+session:
+1，session 在服务器端，cookie 在客户端（浏览器）
+2，session 默认被存在在服务器的一个文件里（不是内存）
+3，session 的运行依赖 session id，而 session id 是存在 cookie 中的，也就是说，如果浏览器禁用了 cookie ，同时 session 也会失效（但是可以通过其它方式实现，比如在 url 中传递 session_id）
+4，session 可以放在 文件、数据库、或内存中都可以。
+5，用户验证这种场合一般会用 session
+因此，维持一个会话的核心就是客户端的唯一标识，即 session id
+
+#myism 和innodb的区别
+1.事务支持
+MyISAM：强调的是性能，每次查询具有原子性,其执行数度比InnoDB类型更快，但是不提供事务支持。
+InnoDB：提供事务支持事务，外部键等高级数据库功能。 具有事务(commit)、回滚(rollback)和崩溃修复能力(crash recovery capabilities)的事务安全(transaction-safe (ACID compliant))型表。
+2.CURD操作
+MyISAM：如果执行大量的SELECT，MyISAM是更好的选择。(因为没有支持行级锁)，在增删的时候需要锁定整个表格，效率会低一些。相关的是innodb支持行级锁，删除插入的时候只需要锁定改行就行，效率较高
+InnoDB：如果你的数据执行大量的INSERT或UPDATE，出于性能方面的考虑，应该使用InnoDB表。
+DELETE 从性能上InnoDB更优，但DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除，在innodb上如果要清空保存有大量数据的表，最好使用truncate table这个命令。
+3.MyISAM支持全文类型索引，而InnoDB不支持全文索引。
+4.存储：Myisam：goods.frm,goods.myd,goods.MyI
+		InnoDB: ibd文件：表空间文件，ibdate1/ibdate2:系统表空间
+		
+#数据库事务：隔离性,原子性,一致性,持久性
+
+#设计模式：单例模式 工厂模式 策略模式

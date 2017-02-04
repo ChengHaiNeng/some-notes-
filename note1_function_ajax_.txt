@@ -1,0 +1,79 @@
+1.2段js代码：①增加子项目  ②tab页切换栏目
+2.图像上传处理
+3.无限极分类
+unlink  
+count — 计算数组中的单元数目或对象中的属性个数
+array_merge  key（）返回数组当前元素的键名 current（）返回数组当前元素的值
+array_push — 将一个或多个单元压入数组的末尾
+array_pop — 将数组最后一个单元弹出
+array_shift — 将数组开头的单元移出数组
+array_unshift — 在数组开头插入一个或多个单元
+unset
+array_key_exists()
+in_array()
+Sort()
+array_reverse()
+array_sum();
+shuffle()
+range()
+array_rand()
+
+time() 返回自从 Unix 纪元（ 格林威治时间 1970 年 1 月 1 日 00:00:00） 到当前时间的秒数。
+date() 不写第二个参数,默认是time();当前时间戳
+$lastday = time()-24*3600;
+echo date('Y年m月d日 H:i:s' , $lastday'),'<br >';
+ 
+
+substr implode explode  str_repeat strpos
+strlen  str_split  trim addslashes htmlspecialchars  strcmp strstr
+
+
+js
+tr:not{:first}  //第一个元素之外的所有同级元素
+tr:first //第一个tr元素
+find('em') //找到某一个元素
+input[name=password]  //name等于password的input元素
+$.each(msg,function(k,v))//遍历
+split(',') //字符串转数组
+after() //在一个元素平级后面添加节点
+html() //添加html内容
+hide() //隐藏
+show() //显示
+append() //添加子元素
+clone() //克隆元素
+attr() //更换属性
+remove() //移出当前元素
+
+html
+display:none
+
+//TP框架模板中的notempty函数
+<notempty name="{$info.}"></notempty>
+<equal name="" value="">   <else/> //不等时候的内容</equal>
+{:str_repeat()}//加上冒号可以在ThinkPHP框架中使用php函数
+S.ajax{
+	data:{"pics_id":pics_id},
+	type:, //默认get方式
+	dataType:, //默认返回字符串
+	url:, 
+	success:function(msg){
+	}
+}
+
+立即显示图片 插件
+ajax无刷新删除相册图片
+ajax无刷新删除条目
+
+
+setField()内部有调用save方法
+
+面包屑
+
+
+	Nginx:
+		1.tar -zxf 解压nginx包
+		2.在nginx包中执行①./configure  --prefix = nginx目录   ②make&&make install
+		3.切换到 nginx目录 下，执行./sbin/nginx启动nginx
+		4.用 netstat -tupln|grep nginx 查看nginx是否启动
+		5.service iptables stop 关闭防火墙
+
